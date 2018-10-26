@@ -91,8 +91,8 @@ namespace SignRouteOneXMLService.Controllers
         }
         public X509Certificate2 GetCertificateFromFilePath(string fileName)
         {
-            string path = @"C:\ExportedPFX";// (Directory.GetCurrentDirectory());
-            string certPath = path + @"\" + fileName;
+            string path = @"/app/cert";// (Directory.GetCurrentDirectory());
+            string certPath = path + @"/" + fileName;
             string certPass = "password";
             X509Certificate2 returnCert = new X509Certificate2();
             // Create a collection object and populate it using the PFX file
