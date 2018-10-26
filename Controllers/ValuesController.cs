@@ -38,8 +38,23 @@ namespace SignRouteOneXMLService.Controllers
             return "test return ";
 
         }
+
+
+public async Task<ContentResult> Post([FromBody] string body)
+		{
+			var requestData = body;
+
+			var response = new ContentResult
+			{
+				Content = requestData,
+				StatusCode = 200
+			};
+			return await Task.FromResult(response);
+		}
+
+
         [HttpPut]
-        public string SignUnsignedWithCert([FromBody] string unsignedXMLText)
+        public async Task<ContentResult> SignUnsignedWithCert([FromBody] string unsignedXMLText)
         {
 
             STR_SOAPSEC_NS = "http://schemas.xmlsoap.org/soap/security/2000-12";
@@ -57,7 +72,12 @@ namespace SignRouteOneXMLService.Controllers
             //X509Certificate2 signingCert = GetCertificateBySubject("CN=TestSignCert", StoreName.My, StoreLocation.CurrentUser);
             signedXML = SignSoapBody(unsignedXML, signingCert);
 
-            return signedXML.OuterXml;
+			var response = new ContentResult
+			{
+				Content = signedXML.OuterXml,
+				StatusCode = 200
+			};
+			return await Task.FromResult(response);
         }
 
         /// <summary>
