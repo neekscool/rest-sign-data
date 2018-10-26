@@ -39,20 +39,6 @@ namespace SignRouteOneXMLService.Controllers
 
         }
 
-
-public async Task<ContentResult> Post([FromBody] string body)
-		{
-			var requestData = body;
-
-			var response = new ContentResult
-			{
-				Content = requestData,
-				StatusCode = 200
-			};
-			return await Task.FromResult(response);
-		}
-
-
         [HttpPut]
         public async Task<ContentResult> SignUnsignedWithCert([FromBody] string unsignedXMLText)
         {
