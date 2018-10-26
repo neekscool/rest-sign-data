@@ -16,6 +16,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SignRouteOneXMLService.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ValuesController : ControllerBase
     {
         public static string STR_SOAP_NS { get; private set; }
