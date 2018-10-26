@@ -1,0 +1,6 @@
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.csprojAssemblyReference.cache
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.csproj.CoreCompileInputs.cache
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.RazorAssemblyInfo.cache
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.RazorAssemblyInfo.cs
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.AssemblyInfoInputs.cache
+/Users/rodrigo.torres/heroku/customers/gmf/restdotnet/obj/Debug/netcoreapp2.1/restdotnet.AssemblyInfo.cs

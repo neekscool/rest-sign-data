@@ -12,10 +12,11 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using System.IO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SignRouteOneXMLService.Controllers
 {
-    public class ValuesController : ApiController
+    public class ValuesController : ControllerBase
     {
         public static string STR_SOAP_NS { get; private set; }
         public static string STR_SOAPSEC_NS { get; private set; }
@@ -36,17 +37,17 @@ namespace SignRouteOneXMLService.Controllers
 
         }
         [HttpPut]
-        public string SignUnsignedWithCert(String Id)
+        public string SignUnsignedWithCert([FromBody] string unsignedXMLText)
         {
 
             STR_SOAPSEC_NS = "http://schemas.xmlsoap.org/soap/security/2000-12";
             STR_SOAP_NS = "http://schemas.xmlsoap.org/soap/envelope/";
             STR_SOAP_ENV = "http://schemas.xmlsoap.org/soap/envelope/";
-            HttpContent requestContent = Request.Content;
-            Byte[] BPostData = requestContent.ReadAsByteArrayAsync().Result;
-            UTF8Encoding encoding = new UTF8Encoding();
-            //Convert the bytes to string using Encoding class
-            String unsignedXMLText = encoding.GetString(BPostData);
+//            HttpContent requestContent = Request.Body;
+//            Byte[] BPostData = requestContent.ReadAsByteArrayAsync().Result;
+//            UTF8Encoding encoding = new UTF8Encoding();
+//            //Convert the bytes to string using Encoding class
+//            String unsignedXMLText = encoding.GetString(BPostData);
             XmlDocument unsignedXML = new XmlDocument();
             unsignedXML.LoadXml(unsignedXMLText);
             XmlDocument signedXML = new XmlDocument();
